@@ -8,7 +8,6 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "url_mapping")
 public class UrlMapping {
 
     @Id

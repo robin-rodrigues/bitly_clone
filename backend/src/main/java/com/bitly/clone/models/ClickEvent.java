@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "click_event")
 public class ClickEvent {
 
     @Id
