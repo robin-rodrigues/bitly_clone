@@ -1,5 +1,6 @@
 package com.bitly.clone.controller;
 
+import com.bitly.clone.dtos.LoginRequest;
 import com.bitly.clone.dtos.RegisterRequest;
 import com.bitly.clone.models.User;
 import com.bitly.clone.service.UserService;
@@ -28,5 +29,10 @@ public class AuthController {
         userService.registerUser(user);
 
         return ResponseEntity.ok("User registered successfully");
+    }
+
+    @PostMapping("/public/login")
+    public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
+        return ResponseEntity.ok(userService.authenticateUser(loginRequest));
     }
 }
