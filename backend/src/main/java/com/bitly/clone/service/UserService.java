@@ -25,12 +25,30 @@ public class UserService {
 
     private JwtUtils jwtUtils;
 
+    /**
+     * Registers a new user by encoding their password before saving to the database.
+     * - Encodes the user's password using the configured password encoder.
+     * - Saves the user entity to the database.
+     *
+     * @param user the user to be registered
+     * @return the saved User entity with the encoded password
+     */
     public User registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         return userRepository.save(user);
     }
 
+    /**
+     * Authenticates a user based on the provided login credentials.
+     * - Authenticates the user using the authentication manager.
+     * - Sets the authenticated user in the SecurityContext.
+     * - The Security Context is used only for the duration of this request to store authentication details.
+     * - Generates a JWT token for the authenticated user.
+     *
+     * @param loginRequest the login request containing the username and password
+     * @return a JwtAuthenticationResponse containing the generated JWT token
+     */
     public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),

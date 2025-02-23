@@ -25,16 +25,39 @@ public class WebSecurityConfig {
 
     private UserDetailsServiceImpl userDetailsService;
 
+    /**
+     * Creates and returns a JWT authentication filter bean.
+     * - Handles the extraction and validation of JWT tokens from requests.
+     * - Ensures authenticated requests have valid tokens before proceeding.
+     *
+     * @return an instance of JwtAuthenticationFilter
+     */
     @Bean
     public JwtAuthenticationFilter jwtAuthenticationFilter() {
         return new JwtAuthenticationFilter();
     }
 
+    /**
+     * Provides a password encoder bean using BCrypt.
+     * - Encrypts passwords before storing them in the database.
+     * - Ensures secure password hashing for authentication.
+     *
+     * @return a BCryptPasswordEncoder instance
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Configures and provides an authentication manager bean.
+     * - Retrieves the authentication manager from the provided configuration.
+     * - Used for authenticating users during login attempts.
+     *
+     * @param authenticationConfiguration the authentication configuration
+     * @return an instance of AuthenticationManager
+     * @throws Exception if authentication manager retrieval fails
+     */
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
