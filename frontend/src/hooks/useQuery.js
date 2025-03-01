@@ -1,6 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../api/api";
 
+export const useFetchMyShortUrls = (token, onError) => {
+    return useQuery({
+        queryKey: ["my-shortenurls"],
+        queryFn: async () => {
+            const response = await api.get("/api/urls/myurls", {
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            return response.data;
+        },
+        select: (data) => {
+            return data.sort(
+                (a, b) => new Date(b.createdDate) - new Date(a.createdDate)
+            );
+        },
+        onError,
+        staleTime: 5000,
+    });
+};
+
 export const useFetchTotalClicks = (token, onError) => {
     return useQuery({
         queryKey: ["url-totalclick"],
@@ -15,10 +38,9 @@ export const useFetchTotalClicks = (token, onError) => {
                     },
                 }
             );
-            return response.data; // Ensure you return `data` directly
+            return response.data;
         },
         select: (data) => {
-            // Since `data` is already `response.data`, access it directly
             const convertToArray = Object.keys(data).map((key) => ({
                 clickDate: key,
                 count: data[key],
