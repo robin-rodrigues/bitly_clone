@@ -5,9 +5,11 @@ import { useFetchMyShortUrls, useFetchTotalClicks } from "../../hooks/useQuery";
 import ShortenPopUp from "./ShortenPopUp";
 import { FaLink } from "react-icons/fa";
 import ShortenUrlList from "./ShortenUrlList";
+import { useNavigate } from "react-router-dom";
 
 const DashboardLayout = () => {
     const { token } = useStoreContext();
+    const navigate = useNavigate();
     const [shortenPopUp, setShortenPopUp] = useState(false);
 
     const {
@@ -22,7 +24,7 @@ const DashboardLayout = () => {
     );
 
     function onError() {
-        console.log("ERROR");
+        navigate("/error")
     }
 
     return (
