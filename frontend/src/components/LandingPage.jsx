@@ -13,7 +13,10 @@ const LandingPage = () => {
     const { token } = useStoreContext();
     console.log("TOKEN FROM LANDING PAGE: " + token);
 
-    const dashBoardNavigateHandler = () => {};
+    const dashBoardNavigateHandler = () => {
+        navigate("/dashboard");
+    };
+
     return (
         <div className="min-h-[calc(100vh-64px)]  lg:px-14 sm:px-8 px-4">
             <div className="lg:flex-row flex-col    lg:py-5   pt-16   lg:gap-10 gap-8 flex justify-between items-center">
