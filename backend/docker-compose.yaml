@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bitly_clone_backend:
+    build:
+      context: .
+      platforms:
+        - linux/arm64
+        - linux/amd64
+    image: rodrob/bitly_clone_backend:latest
+    environment:
+      - DOCKER_BUILDKIT=1
+    command: >
+      sh -c "docker push rodrob/bitly_clone_backend:latest"
