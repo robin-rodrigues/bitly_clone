@@ -11,20 +11,33 @@ const Footer = () => {
                 </div>
 
                 <p className="mt-4 lg:mt-0">
-                    &copy; 2024 Bitly. All rights reserved.
+                    &copy; {new Date().getFullYear()} Bitly Clone (Hobby
+                    Project).
                 </p>
 
                 <div className="flex space-x-6 mt-4 lg:mt-0">
-                    <a href="#" className="hover:text-gray-200">
+                    <a
+                        href="https://www.facebook.com/profile.php?id=100009420427179"
+                        className="hover:text-gray-200"
+                    >
                         <FaFacebook size={24} />
                     </a>
-                    <a href="#" className="hover:text-gray-200">
+                    <a
+                        href="https://x.com/robin_err"
+                        className="hover:text-gray-200"
+                    >
                         <FaTwitter size={24} />
                     </a>
-                    <a href="#" className="hover:text-gray-200">
+                    <a
+                        href="https://www.instagram.com/robin.e.rr/"
+                        className="hover:text-gray-200"
+                    >
                         <FaInstagram size={24} />
                     </a>
-                    <a href="#" className="hover:text-gray-200">
+                    <a
+                        href="https://www.linkedin.com/in/robin-rodrigues-/"
+                        className="hover:text-gray-200"
+                    >
                         <FaLinkedin size={24} />
                     </a>
                 </div>

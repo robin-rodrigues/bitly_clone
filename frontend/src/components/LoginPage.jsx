@@ -32,14 +32,12 @@ const LoginPage = () => {
                 "/api/auth/public/login",
                 data
             );
-            console.log(response.token);
             setToken(response.token);
             localStorage.setItem("JWT_TOKEN", JSON.stringify(response.token));
             toast.success("Login Successful!");
             reset();
             navigate("/dashboard");
         } catch (error) {
-            console.log(error);
             toast.error("Login Failed!");
         } finally {
             setLoader(false);
