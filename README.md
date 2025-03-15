@@ -2,13 +2,6 @@
 
 Bitly Clone is a URL shortening service that allows users to convert long URLs into shorter, more manageable links. This project comprises a Spring Boot backend, a React frontend (using Vite), and utilizes Docker for containerization. The backend is deployed on Render, the database is hosted on Neon, and the frontend is deployed on Netlify.
 
-## Features
-
-- **URL Shortening**: Convert long URLs into short links for easy sharing.
-- **Redirection**: Short links redirect users to the original long URLs.
-- **Analytics**: Track the number of times a short link has been accessed.
-
-
 ## Demo Video
 
 Watch the demo video to see this project in action:
@@ -17,6 +10,19 @@ Watch the demo video to see this project in action:
 You can access this link to create your own short URLs:
 [Live Link](https://mini-urls.netlify.app/)
 
+<img width="1470" alt="Screenshot 2025-03-15 at 10 15 46 PM" src="https://github.com/user-attachments/assets/0bfa0ce9-49d9-4df1-bbe2-9c3f41dce772" />
+
+<img width="1470" alt="Screenshot 2025-03-15 at 10 18 47 PM" src="https://github.com/user-attachments/assets/48e37387-7a2d-46b9-8625-48234ef4ea18" />
+
+<img width="1470" alt="Screenshot 2025-03-15 at 10 19 18 PM" src="https://github.com/user-attachments/assets/01a6a6e6-ceb6-4396-96fe-3511d342a4d2" />
+
+
+## Features
+
+- **URL Shortening**: Convert long URLs into short links for easy sharing.
+- **Redirection**: Short links redirect users to the original long URLs.
+- **Analytics**: Track the number of times a short link has been accessed.
+  
 
 ## Architecture
 
