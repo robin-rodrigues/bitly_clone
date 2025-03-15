@@ -14,7 +14,8 @@ Bitly Clone is a URL shortening service that allows users to convert long URLs i
 Watch the demo video to see this project in action:
 [Demo Video](https://drive.google.com/file/d/1_jw9Kd2XgzNdUSgGc-3wTclOmXhuokJ_/view?usp=share_link)
 
-[Bitly Clone](https://mini-urls.netlify.app/)
+You can access this link to create your own short URLs:
+[Live Link](https://mini-urls.netlify.app/)
 
 
 ## Architecture
